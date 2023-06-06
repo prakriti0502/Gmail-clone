@@ -1,0 +1,47 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.gmail-icon {
+    position: relative;
+    left: 10px;
+}
+
+.gmail-text {
+    font-size: large;
+    margin-left: 15px;
+}
+
+.header-middle {
+    display: flex;
+    align-items: center;
+    flex: 0.7;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.header-middle > .css-i4bv87-MuiSvgIcon-root {
+    color: grey;
+}
+
+.header-middle > input {
+    border: none;
+    width: 100%;
+    padding: 10px;
+    outline-width: 0;
+    font-size: medium;
+    background-color: transparent;
+}
+
+.header-right {
+    display: flex;
+}

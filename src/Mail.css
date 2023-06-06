@@ -1,0 +1,21 @@
+.mail {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 100vh;
+    margin: 30px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.24);
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mail-msg {
+    margin: 20px;
+    overflow-wrap: break-word;
+}
