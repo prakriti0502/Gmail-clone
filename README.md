@@ -9,6 +9,7 @@ This project is a Gmail-like clone that provides basic email management function
 * Spam: Manage and review emails identified as spam.
 * Drafts: Create, edit, and save email drafts for future use.
 * Open and Read: View the content of emails in a user-friendly format.
+* Search: Search the email by entering keywords from subject or content.
 
 ## Installation
 
@@ -34,6 +35,7 @@ Run the application
 * Open your web browser and navigate to http://localhost:3000.
 * Use the navigation menu to access different email categories such as inbox, trash, spam, and drafts.
 * Click on an email to open and read its content.
+* Type in search box to search for emails.
 
 ## Technologies Used
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.css'
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton } from '@mui/material';
@@ -7,8 +7,15 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import AppsIcon from '@mui/icons-material/Apps';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { useDispatch } from "react-redux";
+import { searchEmails } from './reducers/allMailsReducer';
 
 const Header = () => {
+    const [searchText, setSearchText] = useState('');
+    const dispatch = useDispatch(); 
+    const handleSearchClick = () => {
+        dispatch(searchEmails(searchText));
+    }
   return (
     <div className='header'>
         {/* left section */}
@@ -22,8 +29,8 @@ const Header = () => {
         </div>
         {/* middle section */}
         <div className='header-middle'>
-            <SearchIcon/>
-            <input placeholder='Search mail' type='text'/>
+            <input value={searchText} onChange={(e)=>setSearchText(e.target.value)} placeholder='Search mail' type='text'/>
+            <SearchIcon onClick={handleSearchClick}/>
             <ArrowDropDownIcon/>
         </div>
         {/* right section */}

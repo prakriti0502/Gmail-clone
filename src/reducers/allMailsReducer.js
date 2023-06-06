@@ -13,7 +13,7 @@ export const fetchData = async () => {
 export const allMailSlice = createSlice({
   name: "allMail",
   initialState: {
-    emails: null,
+    emails: [],
     error: null,
     loading: false,
     showAllEmails: true
@@ -31,9 +31,22 @@ export const allMailSlice = createSlice({
       fetchMailFailure: (state, action) => {
         state.error = action.payload;
       },
+      searchEmails: (state, action) => {
+        const searchText = action.payload;
+        state.emails = state.emails.map((email) => {
+          if (
+            email.subject.toLowerCase().includes(searchText.toLowerCase()) ||
+            email.body.toLowerCase().includes(searchText.toLowerCase())
+          ) {
+            return { ...email, visible: true };
+          } else {
+            return { ...email, visible: false };
+          }
+        });
+        state.showAllEmails = false;
+      },
       filterEmails: (state, action) => {
         const tag = action.payload;
-        console.log("tag is ", tag);
         if (tag === "all") {
           state.showAllEmails = true;
         } else {
@@ -50,7 +63,7 @@ export const allMailSlice = createSlice({
     },
 });
 
-export const { fetchMail, fetchMailStart, fetchMailFailure, fetchMailSuccess, filterEmails } =
+export const { fetchMail, fetchMailStart, fetchMailFailure, fetchMailSuccess, searchEmails, filterEmails } =
 allMailSlice.actions;
 
 
