@@ -30,7 +30,7 @@ const Header = () => {
         {/* middle section */}
         <div className='header-middle'>
             <input value={searchText} onChange={(e)=>setSearchText(e.target.value)} placeholder='Search mail' type='text'/>
-            <SearchIcon onClick={handleSearchClick}/>
+            <SearchIcon style={{cursor:'pointer'}} onClick={handleSearchClick}/>
             <ArrowDropDownIcon/>
         </div>
         {/* right section */}
